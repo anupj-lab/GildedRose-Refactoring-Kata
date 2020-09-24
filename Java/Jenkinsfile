@@ -15,19 +15,16 @@ pipeline {
 				}
 			post {
 				sucess{
-				echo "Artificat is generated succesfully"
-				echo "Archiving an artifact"
-				archiveArtifacts artifacts: '**/*.war', followSymlinks: false
-				}
+					echo "Artificat is generated succesfully"
+					echo "Archiving an artifact"
+					archiveArtifacts artifacts: '**/*.war', followSymlinks: false
+					}
 				failure{
 					echo "Failed to generate an artifact"
 					}
 				}
 			}
 		
-		
-		stage ("Deploy to Staging and chking code analysis"){
-		parallel {
 		
 			stage ("Deploy to Staging"){
 				steps{
@@ -42,8 +39,7 @@ pipeline {
 							}
 					}
 				}
-		
-		
-			}
+	
 		}
+	
 	}
