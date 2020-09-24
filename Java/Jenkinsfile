@@ -11,7 +11,7 @@ pipeline {
         stage("build") {
             steps {
                 echo "Building an application using maven"
-				sh 'mvn -f ~/projects/kata/GildedRose-Refactoring-Kata/Java/pom.xml clean package'
+				sh 'mvn -f /var/lib/jenkins/workspace/GlidedRose/Java/pom.xml package'
 				}
 			post {
 				success{
