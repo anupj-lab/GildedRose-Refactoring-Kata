@@ -14,7 +14,7 @@ pipeline {
 				sh 'mvn clean package'
 				}
 			post {
-				sucess{
+				success{
 					echo "Artificat is generated succesfully"
 					echo "Archiving an artifact"
 					archiveArtifacts artifacts: '**/*.war', followSymlinks: false
